@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&family=Oxygen:wght@300;400;700&display=swap');
+
+:root {
+    --primary-color: #4daf54;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(to right, #8ac58e ,#4daf54);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: 'Oxygen', sans-serif;
+}
+
+.card {
+    width: 300px;
+    background-color: #272d40;
+    border-radius: 15px;
+    padding: 15px;
+    position: relative;
+    min-height: 400px;
+}
+
+.card:hover .card__image {
+    transform: translate(-20px,-70px) rotate(-20deg);
+}
+
+.card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card__header > i {
+    font-size: 25px;
+}
+
+.card__image {
+    width: 250px;
+    margin: 0px auto 15px;
+    transition: .5s;
+}
+
+.card__image > img {
+    width: 100%;
+    height: 100%;
+}
+
+.card__title {
+    font-size: 28px;
+    color: var(--primary-color);
+    text-align: center;
+    font-weight: bold;
+    margin: 10px 0;
+    transition: .5s;
+}
+
+.card:hover .card__title {
+    transform: translate(-15px,-55px);
+}
+
+.card__price {
+    display: block;
+    font-size: 24px;
+    text-align: center;
+    font-weight: bold;
+    transition: .5s;
+}
+
+.card:hover .card__price {
+    transform: translate(-105px,-55px);
+}
+
+.card__options {
+    position: absolute;
+    margin-top: 50px;
+    opacity: 0;
+    transition: .5s;
+}
+
+.card:hover .card__options {
+    margin-top: -40px;
+    opacity: 1;
+}
+
+
+.option {
+    margin: 15px 0;
+}
+
+.option:last-child {
+    margin-bottom: 0;
+    margin-top: 30px;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+}
+
+.option__title {
+    font-size: 16px;
+    font-weight: bold;
+}
+.option__list {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.option__item {
+    margin: 0 10px;
+}
+
+.option__item.option__item-square {
+    display: block;
+    width: 25px;
+    height: 25px;
+    background-color: rgb(80, 76, 76);
+    border-radius: 3px;
+    position: relative;
+}
+
+.option__item.option__item-circle {
+    display: block;
+    width: 25px;
+    height: 25px;
+    background-color: rgb(80, 76, 76);
+    border-radius: 50%;
+}
+.option__item.option__item-circle:nth-child(1) {
+    background-color: red;
+}
+.option__item.option__item-circle:nth-child(2) {
+    background-color: green;
+}
+.option__item.option__item-circle:nth-child(3) {
+    background-color: black;
+}
+
+.option__content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.card__button {
+    width: 100px;
+    height: 30px;
+    margin: 0 10px;
+    background-color: #6ec574;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+}
+.card__button:hover {
+    transition: transform 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
