@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <link rel="styleSheet" href="../reset.css" />
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet' />
+    <link rel="styleSheet" href="styles.css" />
+</head>
+<body>
+    <div class="container">
+            <div class="gallery">
+                <ul class="gallery__list">
+                </ul>
+            </div>
+            <div class="lightbox">
+                <!-- <div class="lightbox__bg"></div> -->
+                <div class="lightbox__header">
+                    <i class='bx bx-x' onclick="toggleLightbox()"></i>
+                </div>
+                <div class="lightbox__content">
+                    <i class='bx bx-chevron-left lightbox__prev' onClick="handleGoPrev()" ></i>
+                    <img class="lightbox__image" src="https://images.pexels.com/photos/4498792/pexels-photo-4498792.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="gl-item">
+                    <i class='bx bx-chevron-right lightbox__next' onClick="handleGoNext()" ></i>
+                </div>
+            </div>
+    </div>
+    <script src="./index.js" />
+</body>
+</html>
