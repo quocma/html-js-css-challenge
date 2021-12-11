@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detect Pressed Key</title>
+    <link rel="styleSheet" href="../reset.css" />
+    <link rel="styleSheet" href="styles.css" />
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="container">
+        <div class="app-hint">
+            <span>Press Any Key</span>
+        </div>
+        <div class="app">
+            <div class="circle">
+                <span id="circle-value">123</span>
+            </div>
+            <div class="track-list">
+                <div class="box">
+                    <div class="box__item box__item-highlight"><span>Key</span> </div>
+                    <div class="box__item" id="key">0</div>
+                </div>
+                <div class="box">
+                    <div class="box__item box__item-highlight"><span>Location</span> </div>
+                    <div class="box__item" id="location">0</div>
+                </div>
+                <div class="box">
+                    <div class="box__item box__item-highlight"><span>Which</span> </div>
+                    <div class="box__item" id="which">0</div>
+                </div>
+                <div class="box">
+                    <div class="box__item box__item-highlight"><span>code</span> </div>
+                    <div class="box__item" id="code">0</div>
+                </div>
+        </div>
+        </div>
+    </div>
+    <script>
+        let isAppShown = false;
+        document.addEventListener('keydown', (ev) => {
+            const {  keyCode, code, location, key } = ev;
+            console.log(ev)
+            if(!isAppShown) {
+                showApp();
+            }
+            updateDomValueById('key', key);
+            updateDomValueById('location', location);
+            updateDomValueById('which', keyCode);
+            updateDomValueById('code', code);
+            updateDomValueById('circle-value', keyCode);
+        })
+
+        function updateDomValueById (id, value) {
+            const el = document.getElementById(id)
+            el.innerText = value;
+        }
+
+        function showApp () {
+            const app = document.querySelector('.app');
+            const appHint = document.querySelector('.app-hint');
+            console.log(app, appHint)
+            app.style.display = "block";
+            appHint.style.display = "none";
+            isAppShown = true;
+        }
+
+    </script>
+</body>
+</html>
